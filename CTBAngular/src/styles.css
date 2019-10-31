@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.container { border:2px solid #ccc; width:300px; height: 100px; overflow-y: scroll; }
+.border {   border-width: 1px;   border-color:chocolate;   border-style: solid; } 
+.imgusr {border-radius: 50%;}
+.btn-primary {
+    background-color: #F05742;
+    border-color: #F05742;
+  }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:focus {
+    border-style: slategray;
+    outline-color: slategray;
+    background-color:slategray;
+    border-color: slategray;
+    box-shadow: slategray  !important;
+
+  }
+
+  .btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem 
+    rgb(85, 91, 99);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+
+  color: #fff;
+
+background-color:
+slategray;
+
+border-color:
+
+  slategray;
+
+}
+input[type="number"] {
+  width:50px;
+}
+
+.cantidad{
+  font-style: italic;
+  font-size: 12;
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

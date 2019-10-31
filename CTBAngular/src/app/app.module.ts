@@ -8,7 +8,6 @@ import{CalificacionsService} from './servicios/calificacions.service';
 import {MatDialogModule} from "@angular/material";
 import { AppComponent } from './app.component';
 import { FeedComponent } from './feed/feed.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -28,16 +27,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
 
     ListaRecetasComponent,
-    RecetaFormComponent,
+    RecetaFormComponent
 
 
   ],
-  entryComponents:[PostComponent],
+  entryComponents:[PostComponent,RecetaFormComponent],
   imports: [
     BrowserModule,
 
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
 
     NgbModule,
     ReactiveFormsModule,
@@ -46,6 +45,5 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [UsersService,PostsService,ComentariosService,CalificacionsService],
   bootstrap: [AppComponent],
-  entryComponents: [RecetaFormComponent]
 })
 export class AppModule { }

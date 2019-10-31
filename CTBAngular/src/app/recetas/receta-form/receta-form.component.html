@@ -14,19 +14,21 @@
     <form [formGroup]="todoForm" (ngSubmit)="saveTodo()">
       <div class="form-group">
         <label for="title">Titulo*</label>
-        <input type="text" id="title" placeholder="Title" class="form-control" formControlName="Mi Titulo" />
+        <input type="text" id="title" placeholder="Titulo" class="form-control" /> 
         <span style="color:Red;" *ngIf="todoForm.controls['title'].touched && todoForm.controls['title'].errors?.required">Se requiere titulo
           .</span>
       </div>
       <div class="form-group">
         <label for="description">Preparación*</label>
-        <textarea  id="description" placeholder="Description" class="form-control" formControlName="Como prepararé la receta"></textarea>
+        <textarea  id="description" placeholder="Description" class="form-control">
+          
+        </textarea>
         <span style="color:Red;" *ngIf="todoForm.controls['description'].touched && todoForm.controls['description'].errors?.required">La descripcion es requerida
           </span>
       </div>
       <div class="form-group">
       <label for="description">Etiquetas*</label>
-    <div class="container">
+    <div class=" flex-column border rounded scrollbar-light-blue">
         <input type="checkbox" /> Mexicana <br />
         <input type="checkbox" /> Postre <br />
         <input type="checkbox" /> Ensalada <br />
@@ -38,7 +40,7 @@
 
     <div class="form-group">
     <label for="description">Ingredientes*</label>
-    <div class="container">
+    <div class="flex-column border rounded scrollbar-light-blue">
         
         <table>
 

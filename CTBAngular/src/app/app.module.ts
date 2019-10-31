@@ -11,12 +11,21 @@ import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { RouterModule, Routes } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
 import { RecetaFormComponent } from './recetas/receta-form/receta-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+const appRoutes: Routes = [
+
+  {path: '', redirectTo:'/feed', pathMatch: 'full' },
+  {path: 'perfil', component: ListaRecetasComponent},
+  {path: 'feed', component: FeedComponent}
+
+];
 
 @NgModule({
   declarations: [
@@ -40,8 +49,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     NgbModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [UsersService,PostsService,ComentariosService,CalificacionsService],
   bootstrap: [AppComponent],

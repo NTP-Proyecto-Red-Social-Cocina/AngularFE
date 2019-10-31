@@ -1,5 +1,4 @@
 
-
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -43,7 +42,7 @@
     margin: -8px;
     display: flex;
     align-items: center;
-    background-color: #F05742;
+    background-color: #f05742;
     color: white;
     font-weight: 600;
   }
@@ -88,6 +87,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
+    padding: 15px !important;
   }
 
   .card {
@@ -319,25 +319,35 @@
 
   <!-- Terminal -->
 
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Logo"
+    src="../assets/imagenes/logo.jpeg"
+  />
+  <span>Cook The Book</span>
+    <div class="spacer"></div>
+    <div>
+      Perfil
+    </div>
+</div>
+
+<div class="content" role="main">
+
+  
+  <app-feed></app-feed>
+    
 
   <!-- Links -->
  
   <!-- Footer -->
   <br><br>
   <footer>
-    <div class="col">
-        Te gusta Angular?&nbsp;
-        <a href="https://github.com/NTP-Proyecto-Red-Social-Cocina" target="_blank" rel="noopener">     Así fui construida
-    <div class="github-star-badge">
-              <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            Star
-          </div>
-        </a><br>
-        
-        Cook The Book ® 2019
-    </div>
+      Cook The Book ® 2019&nbsp;
       
-      
+      <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 400 400"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+      </a>
   </footer>
 
  
@@ -351,3 +361,4 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+

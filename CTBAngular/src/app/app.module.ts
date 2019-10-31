@@ -6,7 +6,7 @@ import{UsersService} from './servicios/users.service';
 import{PostsService} from './servicios/posts.service';
 import{ComentariosService} from './servicios/comentarios.service';
 import{CalificacionsService} from './servicios/calificacions.service';
-
+import {MatDialogModule} from "@angular/material";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,6 +15,13 @@ import { RegisterComponent } from './components/user/register/register.component
 import { Page404Component } from './components/page404/page404.component';
 import { AdminComponent } from './components/admin/admin.component';
 import {FormsModule} from '@angular/forms';
+import { FeedComponent } from './feed/feed.component';
+import { PostComponent } from './post/post.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
+import { RecetaFormComponent } from './recetas/receta-form/receta-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user/login', component: LoginComponent },
@@ -29,9 +36,17 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     Page404Component,
-    AdminComponent
-
+    AdminComponent,FeedComponent,
+    PostComponent,
+    NavbarComponent,
+    ListaRecetasComponent,
+    RecetaFormComponent
+    MatDialogModule,
+    NgbModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
+  entryComponents:[PostComponent,RecetaFormComponent],
   imports: [
     BrowserModule,
     FormsModule,

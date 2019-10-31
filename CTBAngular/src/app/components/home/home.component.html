@@ -1,0 +1,57 @@
+<style>/* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+</style>
+<section id="books">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let book of books">
+        <footer>
+          <div class="col">
+              Te gusta Angular?&nbsp;
+              <a href="https://github.com/NTP-Proyecto-Red-Social-Cocina" target="_blank" rel="noopener">     Así fui construida
+          <div class="github-star-badge">
+                    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  Star
+                </div>
+              </a><br>
+              
+              Cook The Book ® 2019
+          </div>
+            
+            
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>

@@ -23,7 +23,9 @@
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
 
-  color: #fff;
+  color: 
+
+#fff;
 
 background-color:
 slategray;
@@ -41,6 +43,7 @@ input[type="number"] {
   font-style: italic;
   font-size: 12;
 }
+
 
 
 html, body { height: 100%; }

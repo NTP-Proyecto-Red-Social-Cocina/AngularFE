@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row" *ngFor="let usr of usuarios | async">
+    <div class="col-sm">
+    <label >{{ usr.name }}</label>
+  </div>
+  <div class="col-sm">
+    <img [src]="usr.foto">
+  </div>
+  </div>
+</div>

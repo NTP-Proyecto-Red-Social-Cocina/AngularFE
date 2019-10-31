@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
 import { RecetaFormComponent } from './recetas/receta-form/receta-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RecetaFormComponent } from './recetas/receta-form/receta-form.component
   imports: [
     BrowserModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [UsersService,PostsService,ComentariosService,CalificacionsService],
   bootstrap: [AppComponent],

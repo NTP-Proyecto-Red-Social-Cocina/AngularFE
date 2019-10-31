@@ -8,14 +8,26 @@ import{CalificacionsService} from './servicios/calificacions.service';
 
 import { AppComponent } from './app.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
+import { RecetaFormComponent } from './recetas/receta-form/receta-form.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaRecetasComponent,
+    RecetaFormComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [UsersService,PostsService,ComentariosService,CalificacionsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RecetaFormComponent]
 })
 export class AppModule { }

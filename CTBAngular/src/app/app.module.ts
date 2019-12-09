@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import{UsersService} from './servicios/users.service';
-
 import{PostsService} from './servicios/posts.service';
 import{ComentariosService} from './servicios/comentarios.service';
 import{CalificacionsService} from './servicios/calificacions.service';
@@ -40,7 +39,7 @@ const routes: Routes = [
     PostComponent,
     NavbarComponent,
     ListaRecetasComponent,
-    RecetaFormComponent
+    RecetaFormComponent,
     MatDialogModule,
     NgbModule,
     ReactiveFormsModule,

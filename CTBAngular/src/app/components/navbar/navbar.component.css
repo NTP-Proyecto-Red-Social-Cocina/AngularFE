@@ -1,4 +1,4 @@
-.nav.navbar{
+.bg-primary{
     height: 60px;
     margin: -8px;
     display: flex;
@@ -7,3 +7,7 @@
     color: white;
     font-weight: 600;
   }
+
+  .bg-primary {
+    background-color: #f05742!important;
+}

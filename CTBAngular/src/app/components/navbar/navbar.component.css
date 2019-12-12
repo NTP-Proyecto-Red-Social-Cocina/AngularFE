@@ -1,2 +1,9 @@
-nav.navbar{
-    background-color: #F05742;}
+.nav.navbar{
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #f05742;
+    color: white;
+    font-weight: 600;
+  }

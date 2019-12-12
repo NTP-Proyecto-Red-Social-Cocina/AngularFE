@@ -9,6 +9,6 @@ export class UsersService {
 
   constructor(private http:HttpClient) { }
    getUsuarios(): Observable<User[]>{
-     return this.http.get<User[]>('http://ctb.test/api/parcial2/users');
+     return this.http.get<User[]>('http://ctb.test/api/parcial2/users/ ');
    }
 }

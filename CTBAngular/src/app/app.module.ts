@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';  
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -62,6 +63,7 @@ const appRoutes: Routes = [
     NgbModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    CommonModule,
     RouterModule.forRoot(appRoutes)
 
   ],

@@ -1,51 +1,51 @@
-
-<div class="card-container">
-    <div class="row">
-        <div class="col">
-                <img src="../../../assets/perfil.png" alt="" width="100%">
+<div *ngIf="usuario">
+    <div class="card-container">
+        <div class="row">
+            <div class="col">
+                <img src="{{usuario.foto}}" alt="" width="100%">
+            </div>
+            <div class="col">
+                Nombre: {{usuario.nombre}}
+                <br>
+                Email: {{usuario.email}}
+                <br>
+                Sexo: {{usuario.sexo}}
+                <br>
+                Fecha de Nacmimiento: {{usuario.fecha_nacimiento}}
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" (click)="clickAddReceta() " background-color=#F05742;>
+                    Añadir receta
+                </button>
+            </div>
         </div>
-        <div class="col">
-                Juan Haro
-            <br>
-                Amigos: 23
-            <br>
-                Posts: 3
-        </div>
-        <div class="col">
-                <button class = "btn btn-primary" (click)="clickAddReceta() " background-color= #F05742; > Añadir receta</button>
-        </div>
-        
-        
     </div>
 
-</div>
-
-<div class="card-container">
+    <div class="card-container">
         <div class="contenido" style="margin-bottom: 5%; margin-top: 20px;">
             <div class="row">
                 <div class="col">
-                    <div class="card" >
+                    <div class="card">
                         <a href=""></a>
-                    <img src="../assets/imagenes/post1.jpg" alt="Post1" width="100%" (click)=openDialog()>
-                    
-                    <strong>Chilaquiles de mole</strong>
+                        <img src="../assets/imagenes/post1.jpg" alt="Post1" width="100%" (click)=openDialog()>
+
+                        <strong>Chilaquiles de mole</strong>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../assets/imagenes/post2.jpg" alt="Post2" width="100%">
+                        <strong>Tamal chiapenaco</strong>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../assets/imagenes/post3.jpg" alt="Post3" width="100%">
+                        <strong>Sopes de chicharrón</strong>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../assets/imagenes/post2.jpg" alt="Post2" width="100%">
-                    <strong>Tamal chiapenaco</strong>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../assets/imagenes/post3.jpg" alt="Post3" width="100%">
-                    <strong>Sopes de chicharrón</strong>
-                </div>
-            </div>
-        </div>
         </div>
 
+    </div>
 </div>
-
-

@@ -7,6 +7,8 @@ import { User } from '../../modelos/user';
 import { UsersService } from '../../servicios/users.service';
 import { PostsService } from '../../servicios/posts.service';
 import { Post } from 'src/app/modelos/post';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -18,12 +20,16 @@ import { Post } from 'src/app/modelos/post';
 export class ListaRecetasComponent implements OnInit {
   @Input() usuario: User;
   @Input() posts: Post[];
-
-  @Input() id = 69;
+  id: number;
+   
   constructor(private modalService: NgbModal, private dialog: MatDialog,
-              private usersService: UsersService, private postsService: PostsService) { }
+              private usersService: UsersService, private postsService: PostsService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+          this.id = +params.get('id');          
+    });
     this.usersService.getUsuario(this.id).subscribe((res: any) => {
       this.usuario = res;
       console.log(this.usuario);
@@ -46,8 +52,12 @@ export class ListaRecetasComponent implements OnInit {
     const modal = this.modalService.open(RecetaFormComponent);
   }
 
-  openDialog() {
-    this.dialog.open(PostComponent);
+  openDialog(data) {
+    this.dialog.open(PostComponent, {
+      data: {
+        postE: data
+      }
+    });
   }
 
 }

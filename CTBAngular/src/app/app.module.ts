@@ -29,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
 
   {path: '', redirectTo:'/feed', pathMatch: 'full' },
-  {path: 'perfil', component: ListaRecetasComponent},
+  {path: 'perfil/:id', component: ListaRecetasComponent},
   {path: 'feed', component: FeedComponent},
    { path: 'home', component: HomeComponent },
   { path: 'user/login', component: LoginComponent },

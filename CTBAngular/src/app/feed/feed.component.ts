@@ -30,7 +30,7 @@ export class FeedComponent implements OnInit {
       for (let i = res.length - 1; i--;) {
       this.aux = res[i];
       this.usersService.getUsuario(this.aux.user_id).subscribe((rest: any) => {
-       this.todosPosts.push(new PostsT(this.aux, rest));
+       this.todosPosts.push(new PostsT(res[i], rest));
       console.log(rest);
     }, err => {
       console.log(err);
@@ -42,8 +42,12 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    this.dialog.open(PostComponent);
+  openDialog(data) {
+    this.dialog.open(PostComponent, {
+      data: {
+        postE: data
+      }
+    });
   }
 
 

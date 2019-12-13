@@ -5,13 +5,13 @@
     <div class="contenido" style="margin-bottom: 5%;">
             <a href="">#Mexicana</a>
         <div class="row">
-            <div class="col" *ngFor="let item of todosPosts">
+            <div class="col" *ngFor="let item of todosPosts" (click)="openDialog(item.post)">
                 <div class="card" >
                     <a href=""></a>
-                <img src="{{ item.post.foto }}" alt="Post" width="100%" (click)=openDialog()>
+                <img src="{{ item.post.foto }}" alt="Post" width="100%">
 
                 <strong>{{ item.post.titulo}}</strong>
-                <a href="">{{ item.usr.nombre}}</a>
+                <a [routerLink]="['/perfil',item.usr.id]">{{ item.usr.nombre}}</a>
             </div>
         </div>
     </div>

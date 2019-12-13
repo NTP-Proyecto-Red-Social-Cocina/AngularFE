@@ -5,13 +5,17 @@
         <img src="{{usuario.foto}}" alt="" width="100%">
       </div>
       <div class="col">
-        Nombre: {{usuario.nombre}}
+          <label for="nombre">Nombre:</label>
+          <label id="nombre">{{usuario.nombre}}</label>
         <br>
-        Email: {{usuario.email}}
+        <label for="email">Email:</label>
+        <label id="email">{{usuario.email}}</label>
         <br>
-        Sexo: {{usuario.sexo}}
+        <label for="sexo">Sexo:</label>
+        <label id="sexo">{{usuario.sexo}}</label>
         <br>
-        Fecha de Nacmimiento: {{usuario.fecha_nacimiento}}
+        <label for="fn">Fecha de Nacmimiento:</label>
+        <label id="fn">{{usuario.fecha_nacimiento}}</label>
       </div>
       <div class="col">
         <button class="btn btn-primary" (click)="clickAddReceta() " background-color=#F05742;>
@@ -24,10 +28,10 @@
   <div class="card-container">
     <div class="contenido" style="margin-bottom: 5%; margin-top: 20px;">
       <div class="row">
-        <div class="col" *ngFor="let item of posts">
+        <div class="col" *ngFor="let item of posts" (click)="openDialog(item)">
           <div class="card">
             <a href=""></a>
-            <img src="{{ item.foto }}" alt="Post" width="100%" (click)=openDialog()>
+            <img src="{{ item.foto }}" alt="Post" width="100%" >
 
             <strong>{{ item.titulo }}</strong>
           </div>

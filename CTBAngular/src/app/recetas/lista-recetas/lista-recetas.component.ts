@@ -18,6 +18,7 @@ import { Post } from 'src/app/modelos/post';
 export class ListaRecetasComponent implements OnInit {
   @Input() usuario: User;
   @Input() posts: Post[];
+  @Input() todosPosts: Post[];
   @Input() id = 69;
   constructor(private modalService: NgbModal, private dialog: MatDialog,
               private usersService: UsersService, private postsService: PostsService) { }
@@ -32,6 +33,7 @@ export class ListaRecetasComponent implements OnInit {
 
     this.postsService.getPostUsuario().subscribe((res: any) => {
       this.posts = res;
+      this.todosPosts = res;
       console.log(this.posts);
       for (let i = this.posts.length - 1; i--;) {
         if (this.posts[i].user_id !== this.id) { this.posts.splice(i, 1); }

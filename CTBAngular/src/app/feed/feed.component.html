@@ -5,32 +5,18 @@
     <div class="contenido" style="margin-bottom: 5%;">
             <a href="">#Mexicana</a>
         <div class="row">
-            <div class="col">
+            <div class="col" *ngFor="let item of todosPosts">
                 <div class="card" >
                     <a href=""></a>
-                <img src="../assets/imagenes/post1.jpg" alt="Post1" width="100%" (click)=openDialog()>
-                
-                <strong>Chilaquiles de mole</strong>
-                <a href="">Usuario</a>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="../assets/imagenes/post2.jpg" alt="Post2" width="100%">
-                <strong>Tamal chiapenaco</strong>
-                <a href="">Usuario</a>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="../assets/imagenes/post3.jpg" alt="Post3" width="100%">
-                <strong>Sopes de chicharrón</strong>
-                <a href="">Usuario</a>
+                <img src="{{ item.post.foto }}" alt="Post" width="100%" (click)=openDialog()>
+
+                <strong>{{ item.post.titulo}}</strong>
+                <a href="">{{ item.usr.nombre}}</a>
             </div>
         </div>
     </div>
     </div>
-    
+<!--
     <div class="contenido" style="margin-bottom: 5%;">
             <a href="">#Postres</a>
             <div class="row">
@@ -84,6 +70,6 @@
             </div>
     </div>
     </div>
+  -->
 
-    
 </div>

@@ -25,6 +25,13 @@ export class PostsService {
     );
   }
 
+  createPost(post: Post): Observable<Post> {
+    return this.http.post<Post>('http://ctb.test/api/parcial2/posts', post, this.httpOptions
+    ).pipe(
+      tap(_ => console.log(`fetched product`)),
+      catchError(this.handleError<any>(`getProduct`))
+    );
+  }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

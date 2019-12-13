@@ -14,7 +14,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
 import { AdminComponent } from './components/admin/admin.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './components/navbar/navbar.component';

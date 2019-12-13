@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { PostsService } from '../../servicios/posts.service';
+import { Post } from 'src/app/modelos/post';
 
 
 
@@ -11,15 +13,19 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class RecetaFormComponent implements OnInit {
 
-  todoForm:FormGroup;
   constructor(private formBuilder: FormBuilder,
-    public activeModal:NgbActiveModal) { }
+    public activeModal: NgbActiveModal, private postsService: PostsService) { }
 
   ngOnInit() {
-    this.todoForm = this.formBuilder.group({
-      title: ['',Validators.required],
-      description: ['',Validators.required]
-    })
   }
+
+  saveTodo(post) {
+    console.log(post);
+    this.postsService.createPost(new Post(post.contenido, post.titulo,
+      post.foto
+      , post.video, 69));
+
+  }
+
 
 }

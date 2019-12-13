@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RecetaFormComponent } from '../receta-form/receta-form.component';
-import {PostComponent} from '../../post/post.component'
+import {PostComponent} from '../../post/post.component';
 import { MatDialog } from '@angular/material';
-import {User} from '../../modelos/user';
-import { Observable } from 'rxjs';
+import { User } from '../../modelos/user';
+import { UsersService } from '../../servicios/users.service';
+import { PostsService } from '../../servicios/posts.service';
+import { Post } from 'src/app/modelos/post';
 
 @Component({
   selector: 'app-lista-recetas',
@@ -12,18 +14,37 @@ import { Observable } from 'rxjs';
   styleUrls: ['./lista-recetas.component.css']
 })
 export class ListaRecetasComponent implements OnInit {
-  @Input() usuario: Observable<User[]>;
-  constructor(private modalService: NgbModal, private dialog: MatDialog) { }
+  @Input() usuario: User;
+  @Input() posts: Post[];
+  id = 4;
+  constructor(private modalService: NgbModal, private dialog: MatDialog,
+              private usersService: UsersService, private postsService: PostsService) { }
 
   ngOnInit() {
-    this.usuario = new User(1,'Paco123','paco.com','Paco','M','0984279295','Paco124','22/06/1998','../../../assets/perfil.png');
+    this.usersService.getUsuario(this.id).subscribe((res: any) => {
+      this.usuario = res;
+      console.log(this.usuario);
+    }, err => {
+      console.log(err);
+    });
+
+    this.postsService.getPostUsuario().subscribe((res: any) => {
+      res.forEach( function(item) {
+        if (item.user_id === this.id) {
+          this.posts.push(item);
+          console.log(this.item);
+        }
+      });
+    }, err => {
+      console.log(err);
+    });
   }
 
-  clickAddReceta(){
+  clickAddReceta() {
     const modal = this.modalService.open(RecetaFormComponent);
   }
 
-  openDialog(){
+  openDialog() {
     this.dialog.open(PostComponent);
   }
 

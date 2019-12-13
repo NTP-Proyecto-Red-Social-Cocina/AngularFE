@@ -23,13 +23,18 @@ class PostsT {
 
 export class FeedComponent implements OnInit {
   @Input() todosPosts: PostsT[] = [];
-  userAux: User;
+  aux: Post;
   constructor(private dialog: MatDialog, private usersService: UsersService, private postsService: PostsService) { }
   ngOnInit() {
     this.postsService.getPostUsuario().subscribe((res: any) => {
       for (let i = res.length - 1; i--;) {
-        this.getUser(res[i].user_id);
-        this.todosPosts.push(new PostsT(res[i], this.userAux));
+      this.aux = res[i];
+      this.usersService.getUsuario(this.aux.user_id).subscribe((rest: any) => {
+       this.todosPosts.push(new PostsT(this.aux, rest));
+      console.log(rest);
+    }, err => {
+      console.log(err);
+    });   
       }
       console.log(this.todosPosts);
     }, err => {
@@ -41,13 +46,5 @@ export class FeedComponent implements OnInit {
     this.dialog.open(PostComponent);
   }
 
-  getUser(id: number) {
-    this.usersService.getUsuario(id).subscribe((res: any) => {
-      this.userAux = res;
-      console.log(res);
-    }, err => {
-      console.log(err);
-    });
-  }
 
 }

@@ -5,7 +5,6 @@ import { map } from "rxjs/operators";
 import { isNullOrUndefined } from "util";
 
 import { User} from "../modelos/user";
-import { NgbPaginationNumber } from '@ng-bootstrap/ng-bootstrap';
 @Injectable({
   providedIn: "root"
 })
@@ -15,7 +14,7 @@ export class AuthService {
     "Content-Type": "application/json"
   });
 
-  registerUser( name:string, email:string, nombre:string,sexo:string, telefono:string,password:string, fecha_nacimiento:string, foto:string) {
+  registerUser(name: string, email: string, password: string) {
     const url_api = "http://localhost:3000/api/Users";
     return this.htttp
       .post<User>(
@@ -23,13 +22,7 @@ export class AuthService {
         {
           name: name,
           email: email,
-          nombre: nombre,
-          sexo: sexo,
-          telefono: telefono,
-          password: password,
-          fecha_nacimiento: fecha_nacimiento,
-          foto: foto ,
-
+          password: password
         },
         { headers: this.headers }
       )
